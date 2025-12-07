@@ -1,7 +1,6 @@
 # 🦀 Rust Tokenizer Project
 
-## Link to my youtube presentation video
-[text](https://youtu.be/M5bc4fwzGWI?si=aAt-k23tL94EoLc1)
+### [Link to my youtube presentation video](https://youtu.be/M5bc4fwzGWI?si=aAt-k23tL94EoLc1)
 
 An initial beginer's approach to a tokenizer implementation in Rust that demonstrates fundamental natural language processing concepts. This project includes complete source code documentation, practical examples.
 
