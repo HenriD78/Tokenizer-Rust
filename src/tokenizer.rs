@@ -47,8 +47,7 @@ impl Tokenizer {
         // Split the text by whitespace using split_whitespace()
         // This handles multiple spaces, tabs, newlines, etc. automatically
         for word_unit in self.text.split_whitespace() {
-            // For each "word" (which might contain punctuation), we need to separate
-            // punctuation from the actual word characters
+            // For each "word" (which might contain punctuation), we need to separate punctuation from the actual word characters
 
             // We'll process the word character by character
             let mut current_token = String::new();
@@ -56,8 +55,7 @@ impl Tokenizer {
             for character in word_unit.chars() {
                 // Check if this character is alphanumeric (letter or digit)
                 if character.is_alphanumeric() || character == '\'' || character == '-' {
-                    // These characters are part of words, so add them to current token
-                    // (apostrophes and hyphens are often part of words like "don't" or "mother-in-law")
+                    // These characters are part of words, so add them to current token (apostrophes and hyphens are often part of words like "don't")
                     current_token.push(character);
                 } else {
                     // This character is punctuation
@@ -72,8 +70,7 @@ impl Tokenizer {
                 }
             }
 
-            // After processing all characters in this word unit,
-            // if there's still a token being built, save it
+            // After processing all characters in this word unit, if there's still a token being built, save it
             if !current_token.is_empty() {
                 tokens.push(current_token);
             }
@@ -119,12 +116,10 @@ impl Tokenizer {
             } else {
                 // For tokens after the first, we need to decide about spacing
 
-                // These characters should NOT have a space before them
-                // because they attach to the previous word
+                // These characters should NOT have a space before them because they attach to the previous word
                 let no_space_before = ['.', ',', '!', '?', ';', ':', ')', ']', '}', '"'];
 
-                // These characters should NOT have a space after them
-                // because the next word attaches to them
+                // These characters should NOT have a space after them because the next word attaches to them
                 let no_space_after = ['(', '[', '{', '"'];
 
                 // Check if the current token starts with a no-space character
